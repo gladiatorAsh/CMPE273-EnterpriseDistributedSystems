@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Showing expense</title>
+
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Link</th>
+                <th>Estimated Costs</th>
+                <th>Submit Date</th>
+                <th>Status</th>
+                <th>Decision Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for expense in expenses %}
+            <tr>
+                <td> {{ expense.id }}</td>
+                <td> {{ expense.name }}</td>
+                <td> {{ expense.email }}</td>
+                <td> {{ expense.category }}</td>
+                <td> {{ expense.description }}</td>
+                <td> {{ expense.link }}</td>
+                <td> {{ expense.estimated_costs }}</td>
+                <td> {{ expense.submit_date }}</td>
+                <td> {{ expense.status }}</td>
+                <td> {{ expense.decision_date }}</td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+</body>
+
+</html>

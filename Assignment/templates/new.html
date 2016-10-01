@@ -1,1 +1,54 @@
-sa
+<!DOCTYPE html>
+
+<head>
+    <title> Make an expense entry </title>
+
+</head>
+
+<body>
+    <h3> Expense </h3>
+
+    <hr/>
+    <div class="alert alert-danger">
+
+    </div>
+
+    {%- endfor %}
+
+    <form action="{{request.path}}" method="POST">
+        <label for="name">Name</label> <br>
+        <input type="text" name="name" placeholder="Name" /> <br>
+
+        <label for="email">Email</label> <br>
+        <input type="email" name="email" placeholder="Email" /> <br>
+
+
+        <label for="category">Category</label> <br>
+        <input type="text" name="category" placeholder="Category" /> <br>
+
+
+
+        <label for="descriptiom">Description</label> <br>
+        <input type="text" name="description" placeholder="Description" /> <br>
+
+        <label for="link">Link</label> <br>
+        <input type="text" name="link" placeholder="Link" /> <br>
+
+        <label for="estimated_costs">Estimated Costs</label> <br>
+        <input type="number" name="estimated_costs" placeholder="Estimated Costs" /> <br>
+
+        <label for="submit_date">Submit Date</label> <br>
+        <input type="date" name="submit_date" placeholder="Submit Date" /> <br>
+
+        <label for="status">Status</label> <br>
+        <input type="text" name="status" placeholder="Status" /> <br>
+
+        <label for="decision_date">Decision Date</label> <br>
+        <input type="date" name="decision_date" placeholder="Decision Date" /> <br>
+
+    </form>
+
+
+</body>
+
+</html>
