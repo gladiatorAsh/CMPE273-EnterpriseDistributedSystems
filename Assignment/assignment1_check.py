@@ -102,6 +102,7 @@ def submit_to_lambda():
 # checking post
 # POST should be working on /v1/expenses
 post_url = "%s/v1/expenses" % args.url
+print post_url
 post_response = requests.post(post_url, json.dumps(object_to_post))
 if post_response.status_code != 201:
     print "Response Status code for post is not 201"

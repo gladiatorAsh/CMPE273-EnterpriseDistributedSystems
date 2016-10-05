@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+ db:
+   hostname: mysql
+   image: mysql/mysql-server
+   ports:
+     - "5005:3306"
+   environment:
+      MYSQL_ROOT_PASSWORD: admin 
+      MYSQL_DATABASE: cmpe273
+ 
+ web:
+   build: .
+ #  depends_on:
+ #     - "db"
+   command: app.py
+   ports:
+    - "5000:5000"
+   links:
+    - db
+  
+ 
+      

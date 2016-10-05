@@ -2,16 +2,35 @@ from flask import Flask, request, flash, url_for, redirect, render_template,json
 from flask_sqlalchemy import SQLAlchemy
 from flask_api import status
 from sqlalchemy.inspection import inspect
+from flaskext.mysql import MySQL
+import time
+
+
+
 #from sqlalchemy import create_engine
-#import MySQLdb
 
 app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///expenses.sqlite3'
-app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:admin@172.17.0.3/CMPE273'
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_DB'] = 'cmpe273'
+#app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:admin@172.17.0.2/cmpe273'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:admin@172.18.0.2/cmpe273'
+
 #app.config['SECRET_KEY']='ash'
 db=SQLAlchemy(app)
 #engine = create_engine('mysql+pymysql://root:admin@172.17.0.3/CMPE273')
 #conn=engine.connect();
+
+#query="""CREATE TABLE expenses (  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50), email VARCHAR(30),category VARCHAR(20),
+#		"description VARCHAR(50),link VARCHAR(50),
+#		"estimated_costs VARCHAR(50), submit_date VARCHAR(50), status VARCHAR(50),decision_date VARCHAR(50));"""
+
+#class CreateDB(): 
+#	def __init__(self): 
+#				import sqlalchemy 
+#				engine=sqlalchemy.create_engine('mysql+pymysql://root:admin@172.17.0.2/cmpe273')  
+#				engine.execute("CREATE DATABASE IF NOT EXISTS %s "%("expenses")) 
+				#engine.execute(query)
 
 class Serializer(object):
 	
@@ -133,5 +152,7 @@ def copy_expense(old_expense,new_expense):
 
 
 if __name__ == "__main__":
+	time.sleep(120)
+#	CreateDB()    	
 	db.create_all()
 	app.run(debug=True,host='0.0.0.0')
