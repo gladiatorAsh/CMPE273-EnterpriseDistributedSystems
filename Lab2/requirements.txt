@@ -1,14 +1,11 @@
-beautifulsoup4 (4.5.1)
-bs4 (0.0.1)
-lxml (3.6.0)
-ObjDict (0.3.2)
-ordereddict (1.1)
-pip (8.1.2)
-prettyprint (0.1.5)
-pytz (2016.7)
-requests (2.11.1)
-setuptools (28.3.0)
-simplejson (3.8.2)
-spyne (2.12.13)
-SQLAlchemy (1.1.1)
-wheel (0.30.0a0)
+beautifulsoup4==4.5.1
+bs4==0.0.1
+lxml==3.6.0
+ObjDict==0.3.2
+ordereddict==1.1
+prettyprint==0.1.5
+pytz==2016.7
+requests==2.11.1
+simplejson==3.8.2
+spyne==2.12.13
+SQLAlchemy==1.1.1
